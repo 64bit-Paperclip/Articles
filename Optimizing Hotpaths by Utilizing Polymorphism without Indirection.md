@@ -37,7 +37,7 @@ Hot path code executes millions or billions of times. A single virtual call migh
 
 Modern CPUs are designed to execute hundreds of instructions in parallel through pipelining and speculative execution. Virtual dispatch breaks both of these optimizations. The pointer indirection creates serial dependencies that prevent instruction-level parallelism, and the unpredictable branch destination forces the CPU to guess, often incorrectly.
 
-In performance-critical code (game engines, trading systems, physics simulations) these penalties can consume 20-40% of execution time. The actual work being done is fast; the overhead of _deciding which work to do_ becomes the bottleneck.
+In performance-critical code (game engines, trading systems, physics simulations) these penalties can consume considerable amounts of execution time. The actual work being done is fast; the overhead of _deciding which work to do_ becomes the bottleneck.
 
 ## The Solution: Polymorphism Without Inheritance
 
