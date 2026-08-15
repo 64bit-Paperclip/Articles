@@ -1,5 +1,5 @@
 
-# Optimizing Hot Paths by Utilizing Polymorphism without Indirection
+# Reducing Vtable Indirection for Hot Path Performance
 
 I've been working on a project that requires polymorphism, but specifically *runtime* polymorphism. The distinction matters. Polymorphism and inheritance are core strengths of C++ for organizing complex systems. However, in "hot path" code, the mechanism used to achieve this flexibility can become a major bottleneck.
 
