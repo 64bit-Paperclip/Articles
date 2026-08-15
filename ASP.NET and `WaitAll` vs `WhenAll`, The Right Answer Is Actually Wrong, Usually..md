@@ -51,13 +51,15 @@ Take the context away and the whole thing dissolves. With no `SynchronizationCon
 
 ASP.NET Core never had a `SynchronizationContext` So the canonical deadlock scenario that the interviewer is fishing for **cannot happen in an asp.net environment.**
 
-Sources
+Sources:
+
 [ASP.NET Core SynchronizationContext: There isn't one](https://blog.stephencleary.com/2017/03/aspnetcore-synchronization-context.html)
+
 [ASP.NET Core doesn't use a SynchronizationContext](https://www.vaughanreid.com/2020/05/asp-net-core-doesnt-use-a-synchronizationcontext/)
 
 ## Where this answer is actually valid.
 
-Legacy .NET Framework which  .NET Core superseded a decade ago, has an `AspNetSynchronizationContext`, and you absolutely can cause a deadlock.
+Legacy .NET Framework, which  .NET Core superseded a decade ago, has an `AspNetSynchronizationContext`, and you absolutely can cause a deadlock.
 
 Additionally, WPF and WinForms run on a single-threaded UI `SynchronizationContext`, and they are alive and well on .NET 8/9. Block the UI thread with `WaitAll` and it will hang exactly as advertised. 
 
@@ -74,8 +76,6 @@ The problem is that the interviewer is asking a context-free question while expe
 This is the truly frustrating part if you actually know .NET and understand the question, and the dangerous part if you are not broadly versed in the wider .NET ecosystem.
 
 If you're interviewing for a modern ASP.NET role, the interviewer has just told you one of two things. Either they don't realize they're asking a context-free question with an answer that doesn't apply to the environment you're hiring for, or they know exactly what they're doing and are deliberately setting a trap to see whether you'll challenge the premise.
-
-Neither is particularly encouraging.
 
 In the first case, you may actually know more than the interviewer, but have no reason to expect that the question is based on an incorrect premise. You give the correct answer for ASP.NET Core, only to discover that it isn't the answer they're looking for. Now you have to defend your answer, explain why the expected answer doesn't apply to the environment you're discussing, and effectively tell the person interviewing you that their premise is wrong. That is not a particularly comfortable position to be in, and telling an interviewer that you understand the subject better than they do rarely goes over well.
 
