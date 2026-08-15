@@ -31,7 +31,7 @@ private async Task ProcessOrdersAsync()
 
 Now, the only actually correct answer at this point as to what the difference between the two functions is, as presented, is `.WaitAll()` is a blocking call, and `.WhenAll()` is a non-blocking call. 
 
-This however is not the answer the question, or the interviewer are fishing for though, or at least not the complete picture, and they will prod you further.
+This however is not the answer the question, or the answer the interviewer is fishing for, or at least not the complete picture, and they will prod you further.
 
 What they are looking for you to say is that `.WaitAll()` can cause a deadlock because the thread parks waiting on the tasks, but their continuations are trying to resume on that very same thread, and neither side can move. `.WhenAll()` avoid it because await never blocks the thread to begin with. 
 
