@@ -49,7 +49,7 @@ Take the context away and the whole thing dissolves. With no `SynchronizationCon
 
 ## Why the "Correct Answer" is Wrong Today.
 
-ASP.NET Core never had a `SynchronizationContext` So the canonical deadlock scenario that the interviewer is fishing for **cannot happen in an asp.net environment.**
+ASP.NET Core never had a `SynchronizationContext` So the canonical deadlock scenario that the interviewer is fishing for **cannot happen in an ASP.NET Core environment.**
 
 Sources:
 
