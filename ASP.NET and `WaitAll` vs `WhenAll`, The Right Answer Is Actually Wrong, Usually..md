@@ -71,6 +71,8 @@ If you are applying to a role which mixes .NET Core and legacy .NET framework, t
 # So What is the Problem?
 
 The problem is that the interviewer is asking a context-free question while expecting a context-dependent answer: “`WaitAll` can deadlock.” But the context that makes that answer true often doesn't exist in the environment you're interviewing for. If the role is modern ASP.NET Core, the classic `SynchronizationContext` deadlock simply isn't part of the normal execution model. You're therefore being tested on a failure mode from a different environment, while the answer that actually applies to your environment can be treated as wrong.
+
+The reason this is so insidious is because while the interviewer has not supplied a context, the role you are applying for has, and an intelligent applicant will ignore the legacy .NET deadlock issue because it is irrelevant to the context of the job. They have absolutely zero reason to bring up the failure mode for a legacy framework the job does not use.
 ## So what did the interviewer just tell you?
 
 This is the truly frustrating part if you actually know .NET and understand the question, and the dangerous part if you are not broadly versed in the wider .NET ecosystem.
